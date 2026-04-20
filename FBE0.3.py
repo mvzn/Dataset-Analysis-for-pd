@@ -15,12 +15,10 @@ from sklearn.preprocessing import StandardScaler
 import soundfile as sf
 
 
-CHOIR_F = 'C:/Users/markm/Desktop/New_Choir_Dataset'
-CHOIR_S = 'C:/Users/markm/Desktop/New_Choir_Dataset/Segment_9_Choir.wav'
-NASA_F = 'C:/Users/markm/Desktop/NASA_Dataset/'
-NASA_S = 'C:/Users/markm/Desktop/NASA_Dataset/Apollo 11 Mission Audio - Day 1.wav'
+DATA_F = 'path/to/dataset/files.wav'
 S_R = 44100 # Refactor so it would check the datasets sample rate, if there are different sample rates, resample into the lower one
 
+# Analysis parameters
 FFT_N = 1024
 HOP_L = FFT_N // 4
 MEL_N = 128
@@ -104,8 +102,6 @@ def process_envelope(mfcc, n_mels = MEL_N, n_fft = FFT_N, sr = S_R):
 
 
 # calls
-
-DATA_F = NASA_F
 
 mfcc_data = process_data(DATA_F)
 
